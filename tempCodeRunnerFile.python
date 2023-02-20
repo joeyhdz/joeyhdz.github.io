@@ -1,0 +1,54 @@
+from __future__ import print_function # make print a function
+import mysql.connector # mysql functionality 
+import sys # for misc errors
+
+# Connect to the database
+conn = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="blanca",
+    database="`salesordersexampletest`"
+)
+
+# Create a cursor object
+cursor = conn.cursor()
+
+# Execute a query
+query = "select
+    C.CustomerID,
+    C.CustFirstName,
+    C.CustLastName
+from
+    Customers C
+where
+    not exists(
+    select
+        *
+    from
+        Orders O
+    inner join
+        Order_Details OD
+        on OD.OrderNumber = O.OrderNumber
+    inner join
+        Products P
+        on P.ProductNumber = OD.ProductNumber
+    inner join
+        Categories CC
+        on CC.CategoryID = P.CategoryID
+    where
+        CC.CategoryDescription in ('Bikes', 'Tires')
+        and
+        O.CustomerID = C.CustomerID
+    );"
+cursor.execute(query)
+
+# Fetch the results of the query
+results = cursor.fetchall()
+
+# Loop through the results and print them
+for result in results:
+  print(result)
+
+# Close the cursor and connection
+cursor.close()
+conn.close()
