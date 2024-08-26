@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+}
+
+#title {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 24px;
+}
+
+#chat-container {
+    width: 800px;
+    height: 600px;
+    border: 1px solid #333;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/*chat box where submitted messages appear
+*/
+#chat-box {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    color: #ffffff;
+}
+
+#chat-box .message {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#chat-box .user-message {
+    text-align: right;
+    background-color: #2a2a2a;
+    color: #82aaff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    align-self: flex-end;
+}
+
+#chat-box .bot-message {
+    text-align: left;
+    background-color: #333;
+    color: #c3e88d;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    align-self: flex-start;
+}
+
+/*here we type the message
+*/
+#user-input {
+    border: none;
+    padding: 15px;
+    width: calc(100% - 120px);
+    border-radius: 15px 15px 15px 15px;
+    background-color: #333;
+    color: #ffffff;
+    margin: 0 auto;
+    font-size: 16px;
+}
+
+#send-button {
+    border: none;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 0 0 15px 15px;
+    font-size: 16px;
+}
+
+#send-button:hover {
+    background-color: #07407c;
+}
+
+.message {
+    margin: 10px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.user-message {
+    background-color: #d1e7dd;
+    text-align: right;
+    align-self: flex-end;
+}
+
+.bot-message {
+    background-color: #f8d7da;
+    text-align: left;
+    align-self: flex-start;
+}
+
+.code-block {
+    background-color: #333;
+    color: #f8f8f2;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: "Courier New", Courier, monospace;
+    white-space: pre-wrap;
+}
