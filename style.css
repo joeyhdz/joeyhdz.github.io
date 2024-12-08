@@ -359,3 +359,64 @@ nav .container {
 .certification-item a:hover {
     transform: scale(1.05); /* Subtle zoom effect on hover */
 }
+
+/* General Mobile Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide navigation links for smaller screens */
+    }
+
+    .burger {
+        display: block; /* Show burger menu */
+    }
+
+    .hero-content h1 {
+        font-size: 2rem; /* Adjust heading sizes */
+    }
+
+    .hero-content h2 {
+        font-size: 1rem;
+    }
+
+    .skills-container,
+    .portfolio-grid,
+    .courses-grid,
+    .certifications-grid {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
+    }
+
+    .skills-list,
+    .portfolio-item,
+    .course-item,
+    .certification-item {
+        width: 100%; /* Take full width */
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #hero {
+        background-image: url('hero-bg-mobile.jpg');
+    }
+}
+
+
+/* Extra Small Devices */
+@media (max-width: 480px) {
+    .container {
+        width: 100%; /* Utilize full screen */
+    }
+
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-content h2 {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 0.5rem 1rem;
+    }
+}
