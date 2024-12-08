@@ -359,3 +359,35 @@ nav .container {
 .certification-item a:hover {
     transform: scale(1.05); /* Subtle zoom effect on hover */
 }
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .certifications-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+        gap: 1.5rem;
+    }
+
+    .certification-item p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .certifications-grid {
+        grid-template-columns: 1fr; /* 1 column for mobile devices */
+        gap: 1rem;
+    }
+
+    .certification-item p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .certification-item {
+        padding: 0.8rem;
+    }
+
+    .certification-item p {
+        font-size: 0.75rem;
+    }
+}
