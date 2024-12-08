@@ -126,10 +126,11 @@ nav .container {
     transform: translate(-50%, -50%);
     text-align: center;
     z-index: 1;
+    width: 90%;
 }
 
 .hero-content h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
     color: #2fd0f0;
     opacity: 0;
@@ -138,21 +139,23 @@ nav .container {
 }
 
 .hero-content h2 {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
     display: inline-block;
+    word-break: break-word;
 }
 
 .hero-content .btn {
     background-color: #2fd0f0;
     color: #121212;
-    padding: 0.75rem 1.5rem;
+    padding: 0.5rem 1rem;
     border-radius: 25px;
     font-weight: 600;
     transition: background-color 0.3s;
-    opacity: 0;
-    transform: translateY(-50px);
-    animation: fadeInUp 1s forwards 1s;
+    margin: 0.5rem;
+    display: inline-block;
+    min-width: 130px;
+    text-align: center;
 }
 
 .hero-content .btn:hover {
@@ -168,7 +171,6 @@ nav .container {
 
     .hero-content h1 {
         font-size: 2rem;
-        margin-bottom: 0.5rem;
     }
 
     .hero-content h2 {
@@ -178,9 +180,7 @@ nav .container {
 
     .hero-content .btn {
         font-size: 0.9rem;
-        padding: 0.5rem 1rem;
-        margin: 0.5rem;
-        display: inline-block;
+        margin: 0.5rem auto;
     }
 
     .hero-buttons {
@@ -189,30 +189,6 @@ nav .container {
         align-items: center;
         gap: 0.5rem;
     }
-}
-
-/* Section Styles */
-.section {
-    padding: 4rem 0;
-}
-
-.section-title {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 2rem;
-    position: relative;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.section-title::after {
-    content: '';
-    width: 100px;
-    height: 3px;
-    background-color: #2fd0f0;
-    display: block;
-    margin: 1rem auto 0;
 }
 
 /* Certifications Section */
@@ -262,6 +238,10 @@ nav .container {
 @media (max-width: 768px) {
     .certifications-grid {
         grid-template-columns: 1fr;
+    }
+
+    .certification-item p {
+        font-size: 0.9rem;
     }
 }
 
