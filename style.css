@@ -76,6 +76,29 @@ nav .container {
     cursor: pointer;
 }
 
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #1f1f1f;
+        width: 100%;
+        padding: 1rem 0;
+        z-index: 1000;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .burger.active + .nav-links {
+        display: flex;
+    }
+}
+
 /* Hero Section */
 #hero {
     height: 100vh;
@@ -136,6 +159,38 @@ nav .container {
     background-color: #2e6ef7;
 }
 
+/* Responsive Hero Section */
+@media (max-width: 768px) {
+    #hero {
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-content .btn {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+        margin: 0.5rem;
+        display: inline-block;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+}
+
 /* Section Styles */
 .section {
     padding: 4rem 0;
@@ -160,146 +215,54 @@ nav .container {
     margin: 1rem auto 0;
 }
 
-.skills-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+/* Certifications Section */
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
     margin-top: 2rem;
 }
 
-.skills-list {
-    width: 48%;
-    margin-bottom: 2rem;
-}
-
-.skills-list h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #2fd0f0;
-}
-
-.skills-list ul {
-    list-style: none;
-}
-
-.skills-list li {
+.certification-item {
     background-color: #1f1f1f;
-    margin: 0.5rem 0;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.skills-list li:hover {
-    background-color: #2a2a2a;
-}
-
-/* Portfolio Section */
-.portfolio-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.portfolio-item {
-    width: 48%;
-    margin-bottom: 2rem;
-    position: relative;
-    overflow: hidden;
-    opacity: 0;
-    transform: translateX(-20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.portfolio-item-content {
-    background-color: #1f1f1f;
-    padding: 2rem;
-    border-radius: 10px;
-    transition: transform 0.3s;
-}
-
-.portfolio-item:hover .portfolio-item-content {
-    transform: translateY(-10px);
-}
-
-.portfolio-item h3 {
-    color: #2fd0f0;
-    margin-bottom: 1rem;
-}
-
-.portfolio-item a {
-    color: #2fd0f0;
-}
-
-/* Courses Section */
-.courses-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 2rem;
-}
-
-.course-item {
-    width: 23%;
-    background-color: #1f1f1f;
-    margin-bottom: 1rem;
     padding: 1rem;
     border-radius: 5px;
     text-align: center;
     transition: background-color 0.3s;
 }
 
-.course-item:hover {
+.certification-item:hover {
     background-color: #2a2a2a;
 }
 
-.course-item p {
+.certification-item p {
     font-size: 1rem;
+    margin: 0;
+    color: #ffffff;
 }
 
-/* Contact Section */
-.contact-info {
-    text-align: center;
-    font-size: 1.2rem;
+.certification-item a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    transition: transform 0.2s;
 }
 
-.contact-info p {
-    margin: 1rem 0;
+.certification-item a:hover {
+    transform: scale(1.05);
 }
 
-.contact-info i {
-    color: #2fd0f0;
-    margin-right: 0.5rem;
+/* Responsive Certifications Section */
+@media (max-width: 1024px) {
+    .certifications-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-/* Scroll Progress Bar */
-#progress-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 5px;
-    background-color: #2fd0f0;
-    width: 0%;
-    z-index: 1001;
-}
-
-/* Back-to-Top Button */
-#back-to-top {
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    background-color: #2fd0f0;
-    color: #121212;
-    border: none;
-    padding: 15px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-    z-index: 1000;
-}
-
-#back-to-top:hover {
-    background-color: #2e6ef7;
+@media (max-width: 768px) {
+    .certifications-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Animations */
@@ -319,75 +282,4 @@ nav .container {
 .fade-in.appear {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* Certifications Section */
-.certifications-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 2rem;
-}
-
-.certification-item {
-    width: 23%; /* Matches the width of course-item */
-    background-color: #1f1f1f;
-    margin-bottom: 1rem;
-    padding: 1rem;
-    border-radius: 5px;
-    text-align: center;
-    transition: background-color 0.3s;
-}
-
-.certification-item:hover {
-    background-color: #2a2a2a; /* Matches hover effect of course-item */
-}
-
-.certification-item p {
-    font-size: 1rem;
-    margin: 0; /* Ensures consistent spacing inside the item */
-    color: #ffffff; /* Certification text color */
-}
-
-.certification-item a {
-    color: inherit;
-    text-decoration: none;
-    display: block;
-    transition: transform 0.2s;
-}
-
-.certification-item a:hover {
-    transform: scale(1.05); /* Subtle zoom effect on hover */
-}
-/* Responsive Styles */
-@media (max-width: 1024px) {
-    .certifications-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
-        gap: 1.5rem;
-    }
-
-    .certification-item p {
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .certifications-grid {
-        grid-template-columns: 1fr; /* 1 column for mobile devices */
-        gap: 1rem;
-    }
-
-    .certification-item p {
-        font-size: 0.8rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .certification-item {
-        padding: 0.8rem;
-    }
-
-    .certification-item p {
-        font-size: 0.75rem;
-    }
 }
